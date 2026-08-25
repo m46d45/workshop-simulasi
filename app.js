@@ -247,9 +247,9 @@
         "Seri Simulasi Konstruksi Ramping — " + s.title + "\n" +
         formatWhen(s) + " (Asia/Jakarta)\n" +
         "UTC: " + startUtc + " – " + endUtc + "\n\n" +
-        "Tautan Microsoft Teams (placeholder):\n" + s.teamsUrl + "\n\n" +
+        "Tautan Microsoft Teams:\n" + s.teamsUrl + "\n\n" +
         "Untuk: " + person.nama + " (" + person.email + "), " + person.instansi + "\n" +
-        "Nanti email dari abduh@itb.ac.id membawa tautan Teams yang sama.";
+        "Tidak ada email konfirmasi. Impor acara ini ke kalender Anda untuk masuk ke sesi.";
 
       lines.push("BEGIN:VEVENT");
       lines.push("UID:" + s.id + "-2026@iamkri.seri-simulasi");
@@ -288,11 +288,10 @@
       items += "<li><strong>" + escapeHtml(chosen[i].title) + "</strong> — " + escapeHtml(formatWhen(chosen[i])) + "</li>";
     }
     $("thanks").innerHTML =
-      "<h2>Terima kasih, " + escapeHtml(person.nama) + ".</h2>" +
-      "<p>Anda tercatat untuk sesi berikut.</p>" +
+      "<h2>Anda sudah terdaftar, " + escapeHtml(person.nama) + ".</h2>" +
+      "<p>Sesi berikut sudah tercatat untuk Anda.</p>" +
       "<ul>" + items + "</ul>" +
-      "<p>Berkas kalender <code>.ics</code> sudah diunduh. Impor ke Outlook, Google Kalender, atau Apple Kalender.</p>" +
-      '<p class="note">Nanti email dari abduh@itb.ac.id membawa tautan Teams yang sama. Mode ini baru simulasi di browser.</p>' +
+      "<p>Kalender sudah diunduh. Impor ke Outlook, Google Kalender, atau Apple Kalender. Tautan Microsoft Teams ada di acara itu.</p>" +
       '<p><button type="button" class="ghost" id="unduh-lagi">Unduh ulang kalender</button> · ' +
       '<button type="button" class="ghost" id="daftar-lagi">Daftar orang lain</button></p>';
     $("thanks").classList.add("is-on");
