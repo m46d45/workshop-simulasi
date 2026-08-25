@@ -60,11 +60,6 @@
     return s.weekday + ", " + d.d + " " + MONTHS[d.m - 1] + " " + d.y + " · " + s.start.replace(":", ".") + "–" + s.end.replace(":", ".") + " WIB";
   }
 
-  function formatShortDate(s) {
-    var d = parseYmd(s.date);
-    return d.d + " " + MONTHS[d.m - 1];
-  }
-
   function loadRegs() {
     try {
       var raw = localStorage.getItem(STORAGE_KEY);
@@ -86,29 +81,11 @@
     return null;
   }
 
-  function countBySession() {
-    var counts = {};
-    var i, j, r, id;
-    for (i = 0; i < series.sessions.length; i++) counts[series.sessions[i].id] = 0;
-    var regs = loadRegs();
-    for (i = 0; i < regs.length; i++) {
-      r = regs[i].sessions || [];
-      for (j = 0; j < r.length; j++) {
-        id = r[j];
-        if (counts[id] != null) counts[id] += 1;
-      }
-    }
-    return counts;
-  }
-
   function renderSessions() {
     var host = $("sessions");
-    var counts = countBySession();
     var html = "";
     for (var i = 0; i < series.sessions.length; i++) {
       var s = series.sessions[i];
-      var n = counts[s.id] || 0;
-      var orang = n === 1 ? "1 orang" : n + " orang";
       html +=
         '<label class="session" data-id="' + s.id + '">' +
           '<input type="checkbox" name="sesi" value="' + s.id + '">' +
@@ -117,7 +94,6 @@
             '<p class="session-when">' + escapeHtml(formatWhen(s)) + "</p>" +
             (s.description ? '<p class="session-desc">' + escapeHtml(s.description) + "</p>" : "") +
           "</span>" +
-          '<span class="session-count" data-count-for="' + s.id + '">' + orang + "</span>" +
         "</label>";
     }
 
@@ -133,57 +109,6 @@
     }
   }
 
-  function renderCounts() {
-    var counts = countBySession();
-    var regs = loadRegs();
-    var bits = [];
-    for (var i = 0; i < series.sessions.length; i++) {
-      var s = series.sessions[i];
-      bits.push("<strong>" + escapeHtml(s.title) + "</strong> " + (counts[s.id] || 0));
-    }
-    var total = regs.length;
-    var head = total === 0
-      ? "Belum ada pendaftar di peramban ini."
-      : "Di peramban ini: <strong>" + total + "</strong> pendaftaran. Per sesi: ";
-    $("counts-line").innerHTML = head + (total ? bits.join(" · ") : "");
-
-    var cells = document.querySelectorAll("[data-count-for]");
-    for (var c = 0; c < cells.length; c++) {
-      var id = cells[c].getAttribute("data-count-for");
-      var n = counts[id] || 0;
-      cells[c].textContent = n === 1 ? "1 orang" : n + " orang";
-    }
-
-    renderRekap(counts, regs);
-  }
-
-  function renderRekap(counts, regs) {
-    var rows = "";
-    for (var i = 0; i < series.sessions.length; i++) {
-      var s = series.sessions[i];
-      rows +=
-        "<tr><td>" + pad(s.no) + " " + escapeHtml(s.title) +
-        "</td><td>" + escapeHtml(formatShortDate(s)) +
-        '</td><td class="num">' + (counts[s.id] || 0) + "</td></tr>";
-    }
-    $("rekap").innerHTML =
-      "<p>Rekap ini dibaca dari <code>localStorage</code> — tiruan Excel di peramban, bukan server.</p>" +
-      "<table><thead><tr><th>Sesi</th><th>Tanggal</th><th>Jumlah</th></tr></thead><tbody>" +
-      rows +
-      "</tbody></table>" +
-      "<p style=\"margin:0.8rem 0 0\">Total baris pendaftaran: <strong>" + regs.length + "</strong></p>" +
-      '<p style="margin:0.45rem 0 0"><button type="button" class="ghost" id="hapus-rekap">Hapus rekap di peramban ini</button></p>';
-    var hapus = $("hapus-rekap");
-    if (hapus) {
-      hapus.addEventListener("click", function () {
-        if (!loadRegs().length) return;
-        if (window.confirm("Hapus semua pendaftaran yang tersimpan di peramban ini?")) {
-          saveRegs([]);
-          renderCounts();
-        }
-      });
-    }
-  }
 
   function selectedIds() {
     var boxes = document.querySelectorAll('input[name="sesi"]:checked');
@@ -409,7 +334,6 @@
       at: new Date().toISOString()
     });
     saveRegs(regs);
-    renderCounts();
     downloadIcs(buildIcs(chosen, person));
     showThanks(person, chosen);
   }
@@ -424,7 +348,6 @@
   function boot(data) {
     series = data;
     renderSessions();
-    renderCounts();
     bind();
   }
 

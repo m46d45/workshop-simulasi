@@ -12,13 +12,13 @@ series.json dipakai lewat HTTP. Jika file://, data sesi ada di app.js.
 ## Yang terjadi saat daftar
 
 1. Nama, email, instansi, dan minimal satu sesi divalidasi di peramban.
-2. Baris pendaftaran disimpan di localStorage (tiruan Excel).
-3. Kalender gabungan .ics diunduh (VEVENT per sesi, Asia/Jakarta dan UTC).
-4. Rekap jumlah per sesi dibaca dari localStorage.
+2. Kalender gabungan .ics diunduh (VEVENT per sesi, Asia/Jakarta dan UTC).
+3. Halaman publik tidak menampilkan rekap dan tidak bisa menghapus data.
+
+Rekap dan penghapusan baris hanya di Excel OneDrive (akun Muhamad Abduh):
+KERJAAN / IAMKRI / Workshop Simulasi / Pendaftaran Seri Simulasi.xlsx
 
 Tautan Teams di series.json masih placeholder.
-
-Excel live (nanti) ada di OneDrive (ITB): KERJAAN / IAMKRI / Workshop Simulasi.
 
 ## Langkah berikutnya
 
