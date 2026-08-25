@@ -1,0 +1,86 @@
+{
+  "brand": "IAMKRI",
+  "brandLong": "Ikatan Ahli Manajemen Konstruksi Ramping Indonesia",
+  "title": "Seri Simulasi Konstruksi Ramping",
+  "motto": "Don't be afraid to care",
+  "timezone": "Asia/Jakarta",
+  "tzOffset": "+07:00",
+  "durationMin": 90,
+  "organizerEmail": "abduh@itb.ac.id",
+  "organizerName": "Muhamad Abduh",
+  "note": "Tautan Teams masih placeholder. Surel resmi nanti dari abduh@itb.ac.id.",
+  "sessions": [
+    {
+      "id": "parade-tim-kerja",
+      "no": 1,
+      "title": "Parade Tim Kerja",
+      "description": "Simulasi parade of trades / zone-flow; belajar variabilitas, WIP, dan serah-terima antar tim.",
+      "date": "2026-09-10",
+      "weekday": "Kamis",
+      "weekdayEn": "Thu",
+      "start": "15:30",
+      "end": "17:00",
+      "teamsUrl": "https://teams.microsoft.com/l/meetup-join/placeholder-parade-tim-kerja"
+    },
+    {
+      "id": "siklops",
+      "no": 2,
+      "title": "SiklOps",
+      "description": "Simulasi kejadian diskrit untuk operasi konstruksi yang berulang (siklik), dari yang sederhana ke yang lebih kompleks.",
+      "date": "2026-10-01",
+      "weekday": "Kamis",
+      "weekdayEn": "Thu",
+      "start": "15:30",
+      "end": "17:00",
+      "teamsUrl": "https://teams.microsoft.com/l/meetup-join/placeholder-siklops"
+    },
+    {
+      "id": "neo-cyclone",
+      "no": 3,
+      "title": "Neo-CYCLONE",
+      "description": "Pemodelan dan simulasi operasi konstruksi berbasis CYCLONE (Halpin), dibantu AI.",
+      "date": "2026-10-22",
+      "weekday": "Kamis",
+      "weekdayEn": "Thu",
+      "start": "15:30",
+      "end": "17:00",
+      "teamsUrl": "https://teams.microsoft.com/l/meetup-join/placeholder-neo-cyclone"
+    },
+    {
+      "id": "siapkerja",
+      "no": 4,
+      "title": "SiapKerja!",
+      "description": "Simulasi Last Planner System untuk rumah tipe 36, dari master plan sampai huddle harian.",
+      "date": "2026-11-13",
+      "weekday": "Jumat",
+      "weekdayEn": "Fri",
+      "start": "15:30",
+      "end": "17:00",
+      "teamsUrl": "https://teams.microsoft.com/l/meetup-join/placeholder-siapkerja"
+    },
+    {
+      "id": "rusun-takt",
+      "no": 5,
+      "title": "Rusun Takt",
+      "description": "Simulasi takt pada rusun tiga lantai; membandingkan push vs JIT, zona, dan pemborosan menunggu.",
+      "date": "2026-12-03",
+      "weekday": "Kamis",
+      "weekdayEn": "Thu",
+      "start": "15:30",
+      "end": "17:00",
+      "teamsUrl": "https://teams.microsoft.com/l/meetup-join/placeholder-rusun-takt"
+    },
+    {
+      "id": "mp2k",
+      "no": 6,
+      "title": "MP2K",
+      "description": "Produksi proyek multimoda (di lapangan, near-site, pasokan jauh) untuk belajar project production management.",
+      "date": "2026-12-17",
+      "weekday": "Kamis",
+      "weekdayEn": "Thu",
+      "start": "15:30",
+      "end": "17:00",
+      "teamsUrl": "https://teams.microsoft.com/l/meetup-join/placeholder-mp2k"
+    }
+  ]
+}
