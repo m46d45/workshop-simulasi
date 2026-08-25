@@ -333,8 +333,33 @@
       at: new Date().toISOString()
     });
     saveRegs(regs);
-    downloadIcs(buildIcs(chosen, person));
-    showThanks(person, chosen);
+    var btn = $("submit");
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = "Mencatat…";
+    }
+    var payload = {
+      timestamp: new Date().toISOString(),
+      nama: person.nama,
+      email: person.email,
+      instansi: person.instansi,
+      sesiIds: person.sessions.join(","),
+      sesiJudul: chosen.map(function (s) { return s.title; }).join(", ")
+    };
+    fetch("/api/daftar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .catch(function () { return null; })
+      .then(function () {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Daftar dan unduh kalender";
+        }
+        downloadIcs(buildIcs(chosen, person));
+        showThanks(person, chosen);
+      });
   }
 
   function bind() {
