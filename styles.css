@@ -115,6 +115,30 @@ body {
   letter-spacing: 0.02em;
 }
 
+
+.partner-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.7rem;
+  margin: -0.7rem 0 1.6rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.ice-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.logo-ice {
+  display: block;
+  height: 1.7rem;
+  width: auto;
+}
+
 .lede h1 {
   font-family: var(--font-display);
   font-weight: 560;
