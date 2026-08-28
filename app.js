@@ -16,12 +16,12 @@
     organizerEmail: "abduh@itb.ac.id",
     organizerName: "Muhamad Abduh",
     sessions: [
-      { id: "parade-tim-kerja", no: 1, title: "Parade Tim Kerja", description: "Simulasi parade of trades / zone-flow; belajar variabilitas, WIP, dan serah-terima antar tim.", date: "2026-09-10", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-parade-tim-kerja" },
-      { id: "siklops", no: 2, title: "SiklOps", description: "Simulasi kejadian diskrit untuk operasi konstruksi yang berulang (siklik), dari yang sederhana ke yang lebih kompleks.", date: "2026-10-01", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siklops" },
-      { id: "neo-cyclone", no: 3, title: "Neo-CYCLONE", description: "Pemodelan dan simulasi operasi konstruksi berbasis CYCLONE (Halpin), dibantu AI.", date: "2026-10-22", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-neo-cyclone" },
-      { id: "siapkerja", no: 4, title: "SiapKerja!", description: "Simulasi Last Planner System untuk rumah tipe 36, dari master plan sampai huddle harian.", date: "2026-11-13", weekday: "Jumat", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siapkerja" },
-      { id: "rusun-takt", no: 5, title: "Rusun Takt", description: "Simulasi takt pada rusun tiga lantai; membandingkan push vs JIT, zona, dan pemborosan menunggu.", date: "2026-12-03", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-rusun-takt" },
-      { id: "mp2k", no: 6, title: "MP2K", description: "Produksi proyek multimoda (di lapangan, near-site, pasokan jauh) untuk belajar project production management.", date: "2026-12-17", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-mp2k" }
+      { id: "parade-tim-kerja", no: 1, title: "Parade Tim Kerja", description: "Lima tim kerja. Semua sibuk. Proyek tetap molor. Pelajari dampak variabilitas, WIP, dan batch serah-terima terhadap aliran produksi — sisi konstruksi ramping dan sisi operasi sekaligus.", softwareLabel: "Parade Tim Kerja", softwareUrl: "https://parade-tim-kerja.vercel.app", date: "2026-09-10", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-parade-tim-kerja" },
+      { id: "siklops", no: 2, title: "SiklOps", description: "Operasi konstruksi adalah siklus, bukan baris Gantt. Throughput, utilisasi, antrian, dan biaya tunggu — dari earthmoving sampai tower crane.", softwareLabel: "SiklOps", softwareUrl: "https://siklops.vercel.app", date: "2026-10-01", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siklops" },
+      { id: "neo-cyclone", no: 3, title: "Neo-CYCLONE", description: "Warisan CYCLONE Halpin di peramban. Model operasi, temukan bottleneck, hitung unit cost. AI membantu menggambar; Anda yang menjaga logika.", softwareLabel: "Neo-CYCLONE", softwareUrl: "https://neo-cyclone.vercel.app", date: "2026-10-22", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-neo-cyclone" },
+      { id: "siapkerja", no: 4, title: "SiapKerja!", description: "Last Planner System untuk rumah tipe 36. Kerja masuk jadwal hanya jika sudah bebas constraint — bukan kejar persen palsu.", softwareLabel: "SiapKerja!", softwareUrl: "https://siapkerja-lps.vercel.app", date: "2026-11-13", weekday: "Jumat", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siapkerja" },
+      { id: "rusun-takt", no: 5, title: "Rusun Takt", description: "Rusun tiga lantai, tujuh wagon. Bandingkan push vs JIT dan lihat waiting waste yang tetap dibayar.", softwareLabel: "Rusun Takt", softwareUrl: "https://rusun-takt.vercel.app", date: "2026-12-03", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-rusun-takt" },
+      { id: "mp2k", no: 6, title: "MP2K", description: "Proyek sebagai sistem produksi multimoda: lapangan, near-site, pasokan jauh. Little, Kingman, CONWIP — bukan Gantt yang diperhalus.", softwareLabel: "MP2K", softwareUrl: "https://mp2k.vercel.app", date: "2026-12-17", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-mp2k" }
     ]
   };
 
@@ -35,10 +35,10 @@
 
   function escapeHtml(s) {
     return String(s)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+      .replace(/&/g, "&")
+      .replace(/</g, "<")
+      .replace(/>/g, ">")
+      .replace(/\"/g, """);
   }
 
   function pad(n) {
@@ -81,6 +81,18 @@
     return null;
   }
 
+  function softwareLine(s) {
+    if (!s.softwareUrl) return "";
+    var label = s.softwareLabel ? s.softwareLabel : "buka di peramban";
+    return (
+      '<p class="session-sw">' +
+        '<a class="sw-link" href="' + escapeHtml(s.softwareUrl) + '" target="_blank" rel="noopener">' +
+          "Software gratis · " + escapeHtml(label) +
+        "</a>" +
+      "</p>"
+    );
+  }
+
   function renderSessions() {
     var host = $("sessions");
     var html = "";
@@ -93,12 +105,19 @@
             '<p class="session-title"><span class="session-no">' + pad(s.no) + "</span> " + escapeHtml(s.title) + "</p>" +
             '<p class="session-when">' + escapeHtml(formatWhen(s)) + "</p>" +
             (s.description ? '<p class="session-desc">' + escapeHtml(s.description) + "</p>" : "") +
+            softwareLine(s) +
           "</span>" +
         "</label>";
     }
 
     host.innerHTML = html;
     host.addEventListener("change", syncSessionClass);
+    var links = host.querySelectorAll(".sw-link");
+    for (var j = 0; j < links.length; j++) {
+      links[j].addEventListener("click", function (ev) {
+        ev.stopPropagation();
+      });
+    }
   }
 
   function syncSessionClass() {
@@ -247,6 +266,8 @@
         "Seri Simulasi Konstruksi Ramping — " + s.title + "\n" +
         formatWhen(s) + " (Asia/Jakarta)\n" +
         "UTC: " + startUtc + " – " + endUtc + "\n\n" +
+        (s.description ? s.description + "\n\n" : "") +
+        (s.softwareUrl ? "Software simulasi (gratis, tanpa instalasi):\n" + s.softwareUrl + "\n\n" : "") +
         "Tautan Microsoft Teams:\n" + s.teamsUrl + "\n\n" +
         "Untuk: " + person.nama + " (" + person.email + "), " + person.instansi + "\n" +
         "Tidak ada email konfirmasi. Impor acara ini ke kalender Anda untuk masuk ke sesi.";
