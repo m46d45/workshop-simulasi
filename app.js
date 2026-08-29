@@ -16,12 +16,12 @@
     organizerEmail: "abduh@itb.ac.id",
     organizerName: "Muhamad Abduh",
     sessions: [
-      { id: "parade-tim-kerja", no: 1, title: "Parade Tim Kerja", description: "Lima tim kerja. Semua sibuk. Proyek tetap molor. Pelajari dampak variabilitas, WIP, dan batch serah-terima terhadap aliran produksi — sisi konstruksi ramping dan sisi operasi sekaligus.", softwareLabel: "Parade Tim Kerja", softwareUrl: "https://parade-tim-kerja.vercel.app", date: "2026-09-10", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-parade-tim-kerja" },
-      { id: "siklops", no: 2, title: "SiklOps", description: "Operasi konstruksi adalah siklus, bukan baris Gantt. Throughput, utilisasi, antrian, dan biaya tunggu — dari earthmoving sampai tower crane.", softwareLabel: "SiklOps", softwareUrl: "https://siklops.vercel.app", date: "2026-10-01", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siklops" },
-      { id: "neo-cyclone", no: 3, title: "Neo-CYCLONE", description: "Warisan CYCLONE Halpin di peramban. Model operasi, temukan bottleneck, hitung unit cost. AI membantu menggambar; Anda yang menjaga logika.", softwareLabel: "Neo-CYCLONE", softwareUrl: "https://neo-cyclone.vercel.app", date: "2026-10-22", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-neo-cyclone" },
-      { id: "siapkerja", no: 4, title: "SiapKerja!", description: "Last Planner System untuk rumah tipe 36. Kerja masuk jadwal hanya jika sudah bebas constraint — bukan kejar persen palsu.", softwareLabel: "SiapKerja!", softwareUrl: "https://siapkerja-lps.vercel.app", date: "2026-11-13", weekday: "Jumat", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siapkerja" },
-      { id: "rusun-takt", no: 5, title: "Rusun Takt", description: "Rusun tiga lantai, tujuh wagon. Bandingkan push vs JIT dan lihat waiting waste yang tetap dibayar.", softwareLabel: "Rusun Takt", softwareUrl: "https://rusun-takt.vercel.app", date: "2026-12-03", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-rusun-takt" },
-      { id: "mp2k", no: 6, title: "MP2K", description: "Proyek sebagai sistem produksi multimoda: lapangan, near-site, pasokan jauh. Little, Kingman, CONWIP — bukan Gantt yang diperhalus.", softwareLabel: "MP2K", softwareUrl: "https://mp2k.vercel.app", date: "2026-12-17", weekday: "Kamis", start: "15:30", end: "17:00", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-mp2k" }
+      { id: "parade-tim-kerja", no: 1, title: "Parade Tim Kerja", description: "Lima tim kerja. Semua sibuk. Proyek tetap molor. Pelajari dampak variabilitas, WIP, dan batch serah-terima terhadap aliran produksi — sisi konstruksi ramping dan sisi operasi sekaligus.", softwareLabel: "Parade Tim Kerja", softwareUrl: "https://parade-tim-kerja.vercel.app", date: "2026-09-19", weekday: "Sabtu", start: "08:00", end: "09:30", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-parade-tim-kerja" },
+      { id: "siklops", no: 2, title: "SiklOps", description: "Operasi konstruksi adalah siklus, bukan baris Gantt. Throughput, utilisasi, antrian, dan biaya tunggu — dari earthmoving sampai tower crane.", softwareLabel: "SiklOps", softwareUrl: "https://siklops.vercel.app", date: "2026-10-17", weekday: "Sabtu", start: "08:00", end: "09:30", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siklops" },
+      { id: "neo-cyclone", no: 3, title: "Neo-CYCLONE", description: "Warisan CYCLONE Halpin di peramban. Model operasi, temukan bottleneck, hitung unit cost. AI membantu menggambar; Anda yang menjaga logika.", softwareLabel: "Neo-CYCLONE", softwareUrl: "https://neo-cyclone.vercel.app", date: "2026-10-31", weekday: "Sabtu", start: "08:00", end: "09:30", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-neo-cyclone" },
+      { id: "siapkerja", no: 4, title: "SiapKerja!", description: "Last Planner System untuk rumah tipe 36. Kerja masuk jadwal hanya jika sudah bebas constraint — bukan kejar persen palsu.", softwareLabel: "SiapKerja!", softwareUrl: "https://siapkerja-lps.vercel.app", date: "2026-11-14", weekday: "Sabtu", start: "08:00", end: "09:30", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-siapkerja" },
+      { id: "rusun-takt", no: 5, title: "Rusun Takt", description: "Rusun tiga lantai, tujuh wagon. Bandingkan push vs JIT dan lihat waiting waste yang tetap dibayar.", softwareLabel: "Rusun Takt", softwareUrl: "https://rusun-takt.vercel.app", date: "2026-12-05", weekday: "Sabtu", start: "08:00", end: "09:30", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-rusun-takt" },
+      { id: "mp2k", no: 6, title: "MP2K", description: "Proyek sebagai sistem produksi multimoda: lapangan, near-site, pasokan jauh. Little, Kingman, CONWIP — bukan Gantt yang diperhalus.", softwareLabel: "MP2K", softwareUrl: "https://mp2k.vercel.app", date: "2026-12-19", weekday: "Sabtu", start: "08:00", end: "09:30", teamsUrl: "https://teams.microsoft.com/l/meetup-join/placeholder-mp2k" }
     ]
   };
 
@@ -227,7 +227,7 @@
     return d.y + pad(d.m) + pad(d.d) + "T" + pad(t.h) + pad(t.min) + "00";
   }
 
-  /* WIB = UTC+7; 15:30–17:00 WIB = 08:30–10:00 UTC */
+  /* WIB = UTC+7; 08:00–09:30 WIB = 01:00–02:30 UTC */
   function utcFromJakarta(ymd, hm) {
     var d = parseYmd(ymd);
     var t = parseHm(hm);
